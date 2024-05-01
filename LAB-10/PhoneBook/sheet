@@ -1,0 +1,9 @@
+def insert(Name,PhoneNumber):
+    cur.execute("""INSERT INTO phone_numbers_data(name,phone_number) VALUES
+            (Name,PhoneNumber);
+    """)
+    return "gg"
+Name = input()
+PhoneNumber = input()
+insert(Name,PhoneNumber)
+conn.commit()v

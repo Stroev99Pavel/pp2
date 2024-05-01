@@ -1,0 +1,1 @@
+SELECT * FROM students_data # Show information from table "students_data"
