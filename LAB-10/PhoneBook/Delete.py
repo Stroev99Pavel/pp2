@@ -8,7 +8,13 @@ conn = psycopg2.connect(
     )
 
 cur = conn.cursor()
-how = input("By what do you want to delete? name or number? ")
+how = input("By what do you want to delete? name or number or surname? ")
+if how == "surname":
+    n = input("Write surname ")
+    cur.execute("""DELETE FROM phone_numbers_data
+                WHERE surname = %s;
+    """,(n,))
+    conn.commit()
 if how == "name":
     n = input("Write name ")
     cur.execute("""DELETE FROM phone_numbers_data

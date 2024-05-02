@@ -8,6 +8,7 @@ conn = psycopg2.connect(
     )
 cur = conn.cursor()
 Name = input("Name = ")
+Surname = input("Surname = ")
 PhoneNumber = input("Number = ")
-cur.execute("""INSERT INTO phone_numbers_data(name,phone_number) VALUES(%s,%s)""",(Name,PhoneNumber))
+cur.execute("""INSERT INTO phone_numbers_data(name,surname,phone_number) VALUES(%s,%s,%s)""",(Name,Surname,PhoneNumber))
 conn.commit()

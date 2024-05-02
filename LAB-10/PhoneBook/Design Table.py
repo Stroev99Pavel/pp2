@@ -11,6 +11,7 @@ cur = conn.cursor()
 
 cur.execute("""CREATE TABLE phone_numbers_data(
             name VARCHAR(255),
+            surname VARCHAR(255),
             phone_number VARCHAR(20)
 );
 """)
