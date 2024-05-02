@@ -8,12 +8,10 @@ def get_parts(pattern):
     try:
         with  psycopg2.connect(**params) as conn:
             with conn.cursor() as cur:
-                cur = conn.cursor()
                 cur.callproc('FindBy', (pattern,))
-                row = cur.fetchone()
-                while row is not None:
+                rows = cur.fetchall()
+                for row in rows:
                     parts.append(row)
-                    row = cur.fetchone()
 
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
